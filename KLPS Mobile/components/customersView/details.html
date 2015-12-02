@@ -6,8 +6,9 @@
         </div>
     </header>
 
-    <h3 data-bind="text: currentItem.Address"></h3>
+    <input type="text" data-bind="value: currentItem.Name" />
     <p data-bind="text: currentItem.email"></p>
+<button data-bind="{click: saveChanges}">save</button>
 
     <!-- START_CUSTOM_CODE_customersViewModel -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->

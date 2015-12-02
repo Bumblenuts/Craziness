@@ -82,6 +82,15 @@ app.customersView = kendo.observable({
                 customersViewModel.set('currentItem', item);
                 app.mobileApp.navigate('#components/customersView/details.html?uid=' + item.uid);
             },
+
+
+
+            saveChanges: function(e) {
+             
+             
+                dataSource.sync();
+           
+            },
             
             detailsShow: function(e) {
                 var item = e.view.params.uid,
