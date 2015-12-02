@@ -1,4 +1,55 @@
-<div data-role="view" data-title="Home View" data-layout="main" data-model="app.homeView" data-show="app.homeView.onShow" data-after-show="app.homeView.afterShow">
+<div data-role="view" data-title="Home View" data-layout="main-nonav" data-model="app.homeView" data-show="app.homeView.onShow" data-after-show="app.homeView.afterShow">
+    <div class="signin-view">
+        <form>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>Username
+                        <input type="email" data-bind="value: homeViewModel.email" required autofocus>
+                    </label>
+                </li>
+                <li>
+                    <label>Password
+                        <input type="password" data-bind="value: homeViewModel.password" required>
+                    </label>
+                </li>
+            </ul>
+
+            <div class="button-group button-group-vertical">
+                <a data-role="button" class="primary" data-bind="events: { click: homeViewModel.signin }">Sign In</a>
+
+                <a data-role="button" data-bind="events: { click: homeViewModel.toggleView }">Register</a>
+
+            </div>
+        </form>
+    </div>
+    <div class="signup-view" style="display:none;">
+        <form>
+            <ul data-role="listview" data-style="inset">
+                <li>
+                    <label>Email
+                        <input type="email" data-bind="value: homeViewModel.email" required>
+                    </label>
+                </li>
+                <li>
+                    <label>Password
+                        <input type="password" data-bind="value: homeViewModel.password">
+                    </label>
+                </li>
+            </ul>
+            <div class="button-group button-group-vertical">
+                <a class="primary" data-role="button" data-bind="events: { click: homeViewModel.register }">Register</a>
+                <a data-role="button" data-bind="events: { click: homeViewModel.toggleView }">Sign In</a>
+            </div>
+        </form>
+    </div>
+    <div class="offline" align="center" style="display:none;">
+        You are currently offline. Before using this app in offline mode you must initialize it while you are online
+    </div>
+    <!-- START_CUSTOM_CODE_homeViewModel -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+
+    <!-- END_CUSTOM_CODE_homeViewModel -->
+
     <!-- START_CUSTOM_CODE_homeView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
     <h1 data-bind="html: title"></h1>

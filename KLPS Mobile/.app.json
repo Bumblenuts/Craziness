@@ -4,10 +4,26 @@
     {
       "type": "kendo-ui-mobile:view",
       "name": "homeView",
-      "components": [],
+      "components": [
+        {
+          "type": "kendo-ui-mobile:authentication",
+          "name": "homeViewModel",
+          "dataProvider": "klpsMobile",
+          "emailLabel": "Username",
+          "passwordLabel": "Password",
+          "signinLabel": "Sign In",
+          "signinRedirect": "customersView",
+          "enableRegistration": true,
+          "gotoRegisterLabel": "Register",
+          "registerEmailLabel": "Email",
+          "registerPasswordLabel": "Password",
+          "registerLabel": "Register",
+          "registerRedirect": "homeView",
+          "gotoSigninLabel": "Sign In"
+        }
+      ],
       "title": "Home View",
-      "addToNavigation": true,
-      "icon": "home"
+      "addToNavigation": false
     },
     {
       "type": "kendo-ui-mobile:view",
@@ -19,14 +35,40 @@
     },
     {
       "type": "kendo-ui-mobile:view",
-      "name": "contactsView",
-      "components": [],
-      "title": "Contacts",
+      "name": "customersView",
+      "components": [
+        {
+          "type": "kendo-ui-mobile:list",
+          "name": "customersViewModel",
+          "dataProvider": "klpsMobile",
+          "collection": "Customer",
+          "headerField": "Name",
+          "subHeaderField": "Address",
+          "filterField": "Address",
+          "masterDetails": true,
+          "detailHeaderField": "Name",
+          "detailSubHeaderField": "Address",
+          "detailDescriptionField": "email",
+          "pullToRefresh": true,
+          "endlessScroll": true
+        }
+      ],
+      "title": "Customer View",
       "addToNavigation": true,
       "icon": "contacts"
     }
   ],
-  "dataProviders": [],
+  "dataProviders": [
+    {
+      "type": "kendo-ui-mobile:dataProvider",
+      "name": "klpsMobile",
+      "everliveUrl": "//platform.telerik.com/bs-api/v1/",
+      "title": "KLPS Mobile / KLPS Mobile",
+      "source": "everlive",
+      "everliveKey": "2kbnjshcgu7t9jds",
+      "offlineStorage": true
+    }
+  ],
   "name": "kendoUiMobileApp",
   "navigation": "tabstrip",
   "view": "homeView",

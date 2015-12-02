@@ -11,10 +11,12 @@
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="app.js"></script>
+    <script src="bower_components/everlive/min/everlive.all.min.js"></script>
+    <script src="dataProviders/klpsMobile.js"></script>
 </head>
 
 <body id="kendoUiMobileApp">
-    <script src="components/contactsView/index.js"></script>
+    <script src="components/customersView/index.js"></script>
     <script src="components/settingsView/index.js"></script>
     <script src="components/homeView/index.js"></script>
     <div data-role="layout" data-id="main">
@@ -28,9 +30,8 @@
 
         <footer data-role="footer">
             <div data-role="tabstrip" id="navigation-container">
-                <a href="components/homeView/view.html" data-icon="home">Home View</a>
                 <a href="components/settingsView/view.html" data-icon="settings">Settings</a>
-                <a href="components/contactsView/view.html" data-icon="contacts">Contacts</a>
+                <a href="components/customersView/view.html" data-icon="contacts">Customer View</a>
             </div>
         </footer>
     </div>
