@@ -71,13 +71,15 @@ app.customersView = kendo.observable({
             },
             
             addClick: function(e) {
-                
-                var item = {'Name':'Enter Name Here'};
+             
+                //create a new item.....initialize it as you please
+                var item = { 'Name': 'Enter Name Here' };
+                //retrieve the data source
                  dataSource = customersViewModel.get('dataSource');
                 dataSource.add(item);
                 dataSource.sync();
-                
-                 customersViewModel.set('currentItem', item);
+                item = dataSource.at(dataSource.total() -1);
+                customersViewModel.set('currentItem', item);
                 app.mobileApp.navigate('#components/customersView/details.html?uid=' + item.uid);
             },
             
